@@ -1,0 +1,21 @@
+<head>
+  <title>ir330_repro</title>
+</head>
+
+<body>
+  
+</body>
+
+<template name="customerList">
+  <ul>
+    {{#each customers}}
+       <li><a name="{{customerNumber}}"></a> {{name}}: {{amountOwing}} </li>
+    {{/each}}
+  </ul>
+</template>
+
+<template name="customerView">
+  Name: {{this.name}} <br/>
+  Owing: {{this.amountOwing}} <br/>
+  <a href="{{pathFor 'customerList' hash=amountOwing}}"> View on customer list </a>
+</template>
